@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Spinner
+        android:id="@+id/StackSelector"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="101dp"
+        android:layout_marginEnd="101dp"
+        android:layout_marginBottom="164dp"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/deposit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="31dp"
+        android:layout_marginBottom="288dp"
+        android:text="@string/depositBtn"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/withdraw"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/withdraw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/withdrawBtn"
+        app:layout_constraintBaseline_toBaselineOf="@+id/deposit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/deposit" />
+
+    <TextView
+        android:id="@+id/handDigit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/handAmt"
+        app:layout_constraintBaseline_toBaselineOf="@+id/handStr"
+        app:layout_constraintStart_toStartOf="@+id/withdraw" />
+
+    <TextView
+        android:id="@+id/handStr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="52dp"
+        android:layout_marginBottom="52dp"
+        android:text="@string/handStr"
+        app:layout_constraintBottom_toTopOf="@+id/deposit"
+        app:layout_constraintEnd_toStartOf="@+id/handDigit" />
+
+    <TextView
+        android:id="@+id/accountDigit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="56dp"
+        android:layout_marginBottom="52dp"
+        android:text="@string/bankAmt"
+        app:layout_constraintBottom_toTopOf="@+id/handDigit"
+        app:layout_constraintStart_toEndOf="@+id/account_tv" />
+
+    <TextView
+        android:id="@+id/account_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:text="@string/accountStr"
+        app:layout_constraintBaseline_toBaselineOf="@+id/accountDigit"
+        app:layout_constraintEnd_toEndOf="@+id/handStr" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
