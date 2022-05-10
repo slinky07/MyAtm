@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="101dp"
         android:layout_marginEnd="101dp"
-        android:layout_marginBottom="164dp"
+        android:layout_marginBottom="80dp"
         android:dropDownWidth="match_parent"
         android:minHeight="48dp"
         android:spinnerMode="dropdown"
@@ -23,13 +23,29 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="SpeakableTextPresentCheck" />
 
+    <TextView
+        android:id="@+id/handStr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="28dp"
+        android:fontFamily="monospace"
+        android:text="@string/handStr"
+        android:textAlignment="center"
+        android:textColor="#673AB7"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        app:layout_constraintBottom_toTopOf="@+id/deposit"
+        app:layout_constraintEnd_toStartOf="@+id/handDigit" />
+
     <Button
         android:id="@+id/deposit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="6dp"
         android:layout_marginEnd="31dp"
-        android:layout_marginBottom="288dp"
+        android:layout_marginBottom="164dp"
         android:text="@string/depositBtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/withdraw"
@@ -46,26 +62,10 @@
         app:layout_constraintStart_toEndOf="@+id/deposit" />
 
     <TextView
-        android:id="@+id/handStr"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="52dp"
-        android:fontFamily="monospace"
-        android:text="@string/handStr"
-        android:textAlignment="center"
-        android:textColor="#673AB7"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:typeface="monospace"
-        app:layout_constraintBottom_toTopOf="@+id/deposit"
-        app:layout_constraintEnd_toStartOf="@+id/handDigit" />
-
-    <TextView
         android:id="@+id/account_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="80dp"
+        android:layout_marginEnd="72dp"
         android:fontFamily="monospace"
         android:text="@string/accountStr"
         android:textAlignment="center"
@@ -80,7 +80,7 @@
         android:id="@+id/accountDigit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
+        android:layout_marginStart="84dp"
         android:layout_marginBottom="52dp"
         android:fontFamily="monospace"
         android:text="@string/bankAmt"
@@ -96,7 +96,7 @@
         android:id="@+id/handDigit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
+        android:layout_marginStart="84dp"
         android:fontFamily="monospace"
         android:text="@string/handAmt"
         android:textAlignment="center"
