@@ -4,107 +4,123 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/pink1"
     tools:context=".MainActivity">
 
     <Spinner
         android:id="@+id/StackSelector"
-        android:layout_width="0dp"
+        android:layout_width="158dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="101dp"
-        android:layout_marginEnd="101dp"
-        android:layout_marginBottom="164dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginBottom="72dp"
+        android:background="@color/pink3"
         android:dropDownWidth="match_parent"
         android:minHeight="48dp"
         android:spinnerMode="dropdown"
-        android:textColor="@android:color/black"
+        android:textColor="@color/pink"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/withdraw"
         tools:ignore="SpeakableTextPresentCheck" />
-
-    <Button
-        android:id="@+id/deposit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="6dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="288dp"
-        android:text="@string/depositBtn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/withdraw"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/withdraw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="53dp"
         android:text="@string/withdrawBtn"
         app:layout_constraintBaseline_toBaselineOf="@+id/deposit"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/deposit" />
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/handStr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="52dp"
-        android:fontFamily="monospace"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="1dp"
+        android:fontFamily="@font/arizonia"
         android:text="@string/handStr"
         android:textAlignment="center"
-        android:textColor="#673AB7"
-        android:textSize="20sp"
+        android:textColor="#FB00FF"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:typeface="monospace"
-        app:layout_constraintBottom_toTopOf="@+id/deposit"
-        app:layout_constraintEnd_toStartOf="@+id/handDigit" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/account_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="80dp"
-        android:fontFamily="monospace"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="85dp"
+        android:fontFamily="@font/arizonia"
         android:text="@string/accountStr"
         android:textAlignment="center"
-        android:textColor="#673AB7"
-        android:textSize="20sp"
+        android:textColor="#FB00FF"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:typeface="monospace"
-        app:layout_constraintBaseline_toBaselineOf="@+id/accountDigit"
-        app:layout_constraintEnd_toEndOf="@+id/handStr" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/accountDigit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginBottom="52dp"
-        android:fontFamily="monospace"
+        android:layout_marginEnd="24dp"
+        android:fontFamily="@font/arizonia"
         android:text="@string/bankAmt"
         android:textAlignment="center"
-        android:textColor="#673AB7"
-        android:textSize="20sp"
+        android:textColor="#FB00FF"
+        android:textSize="34sp"
         android:textStyle="bold"
         android:typeface="monospace"
-        app:layout_constraintBottom_toTopOf="@+id/handDigit"
-        app:layout_constraintStart_toEndOf="@+id/account_tv" />
+        app:layout_constraintBottom_toBottomOf="@+id/account_tv"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/account_tv" />
 
     <TextView
         android:id="@+id/handDigit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="100dp"
-        android:fontFamily="monospace"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="1dp"
+        android:fontFamily="@font/arizonia"
         android:text="@string/handAmt"
         android:textAlignment="center"
-        android:textColor="#673AB7"
-        android:textSize="20sp"
+        android:textColor="#FB00FF"
+        android:textSize="34sp"
         android:textStyle="bold"
         android:typeface="monospace"
-        app:layout_constraintBaseline_toBaselineOf="@+id/handStr"
-        app:layout_constraintStart_toStartOf="@+id/withdraw" />
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintEnd_toEndOf="@+id/imageView" />
+
+    <Button
+        android:id="@+id/deposit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="53dp"
+        android:layout_marginTop="47dp"
+        android:layout_marginEnd="30dp"
+        android:text="@string/depositBtn"
+        app:layout_constraintEnd_toStartOf="@+id/withdraw"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="380dp"
+        android:layout_marginStart="27dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginBottom="260dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_lolipopatm" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

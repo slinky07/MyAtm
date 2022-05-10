@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView accountAmt;
     private Spinner spin;                 //spinner
     private int transaction = 1000;       //transaction being the requested amount when clicked
-//    Strategy d = new Deposit(), w = new Withdraw();
+    Strategy d = new Deposit(), w = new Withdraw();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,13 +80,13 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * set up select listeners
-     * <br> setOnSelectedListener taken from in-class lecture.
+     * <br> setOnSelectedListener inspired from in-class lecture.
      */
     private void setSelectListener() {
         spin.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                Log.d("Spinner Test", spin.getItemAtPosition(position).toString()); //test log
+                Log.d("Spinner MyApp", spin.getItemAtPosition(position).toString()); //test log
 
                 String selected = spin.getItemAtPosition(position).toString();
                 transaction = Integer.parseInt(selected);
@@ -109,8 +109,6 @@ public class MainActivity extends AppCompatActivity {
         int handVal = getIntFromTV(handAmt), accountVal = getIntFromTV(accountAmt);
 
         if (handVal>= transaction) {
-            Strategy d = new Deposit(), w = new Withdraw(); // strategy pattern
-
             handAmt.setText(getStrFromLogic(w, handVal));
             accountAmt.setText(getStrFromLogic(d, accountVal));
         }
@@ -124,8 +122,6 @@ public class MainActivity extends AppCompatActivity {
         int accountVal = getIntFromTV(accountAmt), handVal = getIntFromTV(handAmt);
 
         if (accountVal >= transaction) {
-            Strategy w =  new Withdraw(), d = new Deposit(); // strategy pattern
-
             accountAmt.setText(getStrFromLogic(w, accountVal));
             handAmt.setText(getStrFromLogic(d, handVal));
         }
