@@ -15,5 +15,5 @@ public interface Strategy {
      * @param transaction is transaction amount to process.
      * @return value to send to client
      */
-    public abstract int doLogic(int val, int transaction);
+    int doLogic(int val, int transaction);
 }

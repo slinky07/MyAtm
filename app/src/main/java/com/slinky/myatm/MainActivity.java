@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView accountAmt;
     private Spinner spin;                 //spinner
     private int transaction = 1000;       //transaction being the requested amount when clicked
-
+//    Strategy d = new Deposit(), w = new Withdraw();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,18 +74,8 @@ public class MainActivity extends AppCompatActivity {
      * set up click/tap listeners
      */
     private void setClickListeners() {
-        deposit_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onClickDeposit();
-            }
-        });
-        withdraw_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onClickingWithdraw();
-            }
-        });
+        deposit_btn.setOnClickListener(v -> onClickDeposit());
+        withdraw_btn.setOnClickListener(v -> onClickingWithdraw());
     }
 
     /**
@@ -134,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
         int accountVal = getIntFromTV(accountAmt), handVal = getIntFromTV(handAmt);
 
         if (accountVal >= transaction) {
-            Strategy w = new Withdraw(), d = new Deposit(); // strategy pattern
+            Strategy w =  new Withdraw(), d = new Deposit(); // strategy pattern
 
             accountAmt.setText(getStrFromLogic(w, accountVal));
             handAmt.setText(getStrFromLogic(d, handVal));
