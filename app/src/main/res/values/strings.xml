@@ -5,7 +5,7 @@
     <string name="accountStr">Account: </string>
     <string name="handStr">Money In Hand: </string>
     <string name="handAmt">0</string>
-    <string name="bankAmt">3000</string>
+    <string name="bankAmt">10000</string>
     <string-array name="stackSelector">
         <item>1000</item>
         <item>900</item>

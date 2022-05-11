@@ -2,6 +2,7 @@ package com.slinky.myatm;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 /**
  * created by Francis Sauve for CCCS-325-764: Assignment 1
@@ -17,10 +19,11 @@ import android.widget.TextView;
 public class MainActivity extends AppCompatActivity {
     private Button withdraw_btn;          //btn
     private Button deposit_btn;
-    private TextView handAmt;             //TV
-    private TextView accountAmt;
+    private TextView moneyInHand;             //TV
+    private TextView account;
     private Spinner spin;                 //spinner
     private int transaction = 1000;       //transaction being the requested amount when clicked
+
     Strategy d = new Deposit(), w = new Withdraw();
 
     @Override
@@ -41,9 +44,8 @@ public class MainActivity extends AppCompatActivity {
     protected void initIDs() {
         withdraw_btn = findViewById(R.id.withdraw);           //buttons ids
         deposit_btn = findViewById(R.id.deposit);
-
-        handAmt = findViewById(R.id.handDigit);               // money IDs
-        accountAmt = findViewById(R.id.accountDigit);
+        moneyInHand = findViewById(R.id.moneyInHandID);               // money IDs
+        account = findViewById(R.id.accountID);
     }
 
     /**
@@ -106,11 +108,14 @@ public class MainActivity extends AppCompatActivity {
      * <br> the logic here is simply reversed from withdraw
      */
     public void onClickDeposit() {
-        int handVal = getIntFromTV(handAmt), accountVal = getIntFromTV(accountAmt);
+        int handVal = getIntFromTV(moneyInHand), accountVal = getIntFromTV(account);
 
-        if (handVal>= transaction) {
-            handAmt.setText(getStrFromLogic(w, handVal));
-            accountAmt.setText(getStrFromLogic(d, accountVal));
+        if (handVal >= transaction) {
+            moneyInHand.setText(getStrFromLogic(w, handVal));
+            account.setText(getStrFromLogic(d, accountVal));
+        } else {
+            //error message
+            Toast.makeText(this, "Not enough money! Get a job to deposit more!", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -119,11 +124,14 @@ public class MainActivity extends AppCompatActivity {
      * <br> the logic here is simply reversed from deposits
      */
     public void onClickingWithdraw() {
-        int accountVal = getIntFromTV(accountAmt), handVal = getIntFromTV(handAmt);
+        int accountVal = getIntFromTV(account), handVal = getIntFromTV(moneyInHand);
 
         if (accountVal >= transaction) {
-            accountAmt.setText(getStrFromLogic(w, accountVal));
-            handAmt.setText(getStrFromLogic(d, handVal));
+            account.setText(getStrFromLogic(w, accountVal));
+            moneyInHand.setText(getStrFromLogic(d, handVal));
+        } else {
+            // error message
+            Toast.makeText(this, "Not enough money! Don't steal from us!", Toast.LENGTH_SHORT).show();
         }
     }
 

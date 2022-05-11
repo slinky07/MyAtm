@@ -37,7 +37,7 @@
         android:textStyle="bold"
         android:typeface="monospace"
         app:layout_constraintBottom_toTopOf="@+id/deposit"
-        app:layout_constraintEnd_toStartOf="@+id/handDigit" />
+        app:layout_constraintEnd_toStartOf="@+id/moneyInHandID" />
 
     <Button
         android:id="@+id/deposit"
@@ -73,11 +73,11 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:typeface="monospace"
-        app:layout_constraintBaseline_toBaselineOf="@+id/accountDigit"
+        app:layout_constraintBaseline_toBaselineOf="@+id/accountID"
         app:layout_constraintEnd_toEndOf="@+id/handStr" />
 
     <TextView
-        android:id="@+id/accountDigit"
+        android:id="@+id/accountID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
@@ -89,11 +89,11 @@
         android:textSize="20sp"
         android:textStyle="bold"
         android:typeface="monospace"
-        app:layout_constraintBottom_toTopOf="@+id/handDigit"
+        app:layout_constraintBottom_toTopOf="@+id/moneyInHandID"
         app:layout_constraintStart_toEndOf="@+id/account_tv" />
 
     <TextView
-        android:id="@+id/handDigit"
+        android:id="@+id/moneyInHandID"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
