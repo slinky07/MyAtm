@@ -1,26 +1,26 @@
 <resources>
-    <string name="app_name">MyAtm</string>
-    <string name="depositBtn">DEPOSIT</string>
-    <string name="withdrawBtn">WITHDRAW</string>
-    <string name="accountStr">Account: </string>
-    <string name="handStr">Money In Hand: </string>
-    <string name="handAmt">0</string>
-    <string name="bankAmt">10000</string>
-    <string-array name="stackSelector">
-        <item>1000</item>
-        <item>900</item>
-        <item>800</item>
-        <item>700</item>
-        <item>600</item>
-        <item>500</item>
-        <item>400</item>
-        <item>300</item>
-        <item>200</item>
-        <item>100</item>
-<!--        <item>80</item>-->
-<!--        <item>60</item>-->
-<!--        <item>40</item>-->
-<!--        <item>20</item>-->
-    </string-array>
+  <string name="app_name">MyAtm</string>
+  <string name="depositBtn">DEPOSIT</string>
+  <string name="withdrawBtn">WITHDRAW</string>
+  <string name="accountStr">Account: </string>
+  <string name="handStr">Money In Hand: </string>
+  <string name="handAmt">0</string>
+  <string name="bankAmt">10000</string>
+  <string-array name="stackSelector">
+    <item>1000</item>
+    <item>900</item>
+    <item>800</item>
+    <item>700</item>
+    <item>600</item>
+    <item>500</item>
+    <item>400</item>
+    <item>300</item>
+    <item>200</item>
+    <item>100</item>
+    <!--        <item>80</item>-->
+    <!--        <item>60</item>-->
+    <!--        <item>40</item>-->
+    <!--        <item>20</item>-->
+  </string-array>
 
 </resources>
