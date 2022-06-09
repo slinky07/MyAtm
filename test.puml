@@ -1,0 +1,36 @@
+@startuml
+testdot
+@enduml
+class com.slinky.myatm.MainActivity {
+- Button withdraw_btn
+- Button deposit_btn
+- TextView moneyInHand
+- TextView account
+- Spinner spin
+- int transaction
+~ Strategy d
+# void onCreate(Bundle)
+# void initIDs()
+# void initSpinner()
+- void setClickListeners()
+- void setSelectListener()
++ void onClickDeposit()
++ void onClickingWithdraw()
+- int getIntFromTV(TextView)
+- String getStrFromLogic(Strategy,int)
+}
+class com.slinky.myatm.Deposit {
++ int doLogic(int,int)
+}
+interface com.slinky.myatm.Strategy {
+~ int doLogic(int,int)
+}
+class com.slinky.myatm.Withdraw {
++ int doLogic(int,int)
+}
+
+
+androidx.appcompat.app.AppCompatActivity <|-- com.slinky.myatm.MainActivity
+com.slinky.myatm.Strategy <|.. com.slinky.myatm.Deposit
+com.slinky.myatm.Strategy <|.. com.slinky.myatm.Withdraw
+@enduml
